@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  font-synthesis: none;
+  text-rendering: geometricPrecision;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  direction: rtl;
+  font-family: Vazirmatn, system-ui, sans-serif;
+  background: #fff;
+  color: #303033;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+
+img,
+video {
+  max-width: 100%;
+}
+
+::selection {
+  background: #3180e0;
+  color: #fff;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+input,
+select,
+textarea,
+button {
+  font: inherit;
+}
+
+.snap-x {
+  scrollbar-width: thin;
+  scrollbar-color: #3180e0 #e5e5e7;
+}
+
+.snap-x::-webkit-scrollbar {
+  height: 8px;
+}
+
+.snap-x::-webkit-scrollbar-track {
+  background: #e5e5e7;
+}
+
+.snap-x::-webkit-scrollbar-thumb {
+  background: #3180e0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
