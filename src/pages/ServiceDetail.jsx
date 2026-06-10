@@ -9,38 +9,38 @@ export default function ServiceDetail({ forcedSlug }) {
 
   return (
     <>
-      <section className="relative flex min-h-[72vh] items-end overflow-hidden bg-spring-ink pt-36 text-white">
+      <section className="relative flex min-h-[50vh] items-end overflow-hidden bg-spring-ink pt-28 text-white sm:min-h-[60vh] sm:pt-32 md:min-h-[72vh] md:pt-36">
         <img src={service.image} alt={service.title} className="absolute inset-0 h-full w-full object-cover opacity-65" />
         <div className="absolute inset-0 bg-black/55" />
-        <div className="relative mx-auto w-full max-w-[1320px] px-5 pb-16 md:px-8">
-          <div className="mb-7 flex gap-2 text-sm text-white/65">
+        <div className="relative mx-auto w-full max-w-[1320px] px-4 pb-10 sm:px-5 sm:pb-16 md:px-8">
+          <div className="mb-5 flex flex-wrap gap-2 text-xs text-white/65 sm:mb-7 sm:text-sm">
             <Link to="/">خانه</Link><span>/</span><Link to="/services">خدمات</Link>
           </div>
-          <h1 className="max-w-4xl text-5xl font-semibold leading-tight md:text-7xl">{service.title}</h1>
-          <p className="mt-7 max-w-2xl text-lg leading-9 text-white/82">{service.intro}</p>
-          <div className="mt-8 flex flex-wrap gap-3">
+          <h1 className="max-w-4xl text-3xl font-semibold leading-tight sm:text-4xl md:text-5xl lg:text-7xl">{service.title}</h1>
+          <p className="mt-5 max-w-2xl text-base leading-8 text-white/82 sm:mt-7 sm:text-lg sm:leading-9">{service.intro}</p>
+          <div className="mt-6 flex flex-col gap-2 sm:mt-8 sm:flex-row sm:flex-wrap sm:gap-3">
             <OrderButton variant="light" />
             <ArrowButton to="/contact" variant="light">درخواست مشاوره</ArrowButton>
           </div>
         </div>
       </section>
 
-      <section className="py-20">
-        <div className="mx-auto grid max-w-[1320px] gap-12 px-5 md:px-8 lg:grid-cols-[1fr_420px]">
+      <section className="py-12 sm:py-20">
+        <div className="mx-auto grid max-w-[1320px] gap-8 px-4 sm:gap-12 sm:px-5 md:px-8 lg:grid-cols-[1fr_minmax(0,420px)]">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[.22em] text-spring-muted">{service.title}</p>
-            <h2 className="mt-5 text-3xl font-semibold leading-tight md:text-5xl">چیست و چگونه انجام می شود</h2>
-            <p className="mt-7 text-lg leading-9 text-spring-charcoal/75">{service.body}</p>
+            <h2 className="mt-4 text-2xl font-semibold leading-tight sm:mt-5 sm:text-3xl md:text-5xl">چیست و چگونه انجام می شود</h2>
+            <p className="mt-5 text-base leading-8 text-spring-charcoal/75 sm:mt-7 sm:text-lg sm:leading-9">{service.body}</p>
             <ul className="mt-8 grid gap-3">
               {service.benefits.map((benefit) => <li key={benefit} className="border-r-2 border-spring-blue pr-4 text-spring-charcoal/80">{benefit}</li>)}
             </ul>
           </div>
-          <aside className="rounded-lg bg-spring-paper p-8">
-            <h3 className="text-2xl font-semibold">فناوری های مرتبط</h3>
-            <div className="mt-6 grid gap-3">
+          <aside className="rounded-lg bg-spring-paper p-5 sm:p-8">
+            <h3 className="text-xl font-semibold sm:text-2xl">فناوری های مرتبط</h3>
+            <div className="mt-5 grid gap-3 sm:mt-6">
               {technologies.slice(0, 5).map(([name, label]) => (
-                <Link key={name} to="/technologies" className="flex items-center justify-between border border-spring-line bg-white p-4 transition hover:border-spring-blue">
-                  <span>{name}</span>
+                <Link key={name} to="/technologies" className="flex flex-col gap-1 border border-spring-line bg-white p-4 transition hover:border-spring-blue sm:flex-row sm:items-center sm:justify-between sm:gap-3">
+                  <span className="font-medium">{name}</span>
                   <span className="text-sm text-spring-muted">{label}</span>
                 </Link>
               ))}

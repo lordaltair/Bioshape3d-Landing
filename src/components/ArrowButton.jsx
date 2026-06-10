@@ -7,9 +7,9 @@ export default function ArrowButton({ to, children, variant = 'dark', icon = 'ar
   const Icon = icon === 'config' ? SlidersHorizontal : ArrowUpLeft;
 
   return (
-    <Link to={to} className={`group inline-flex items-stretch text-sm font-medium ${className}`}>
-      <span className={`grid min-h-12 place-items-center rounded-r-none rounded-l-none border px-6 transition ${colors}`}>{children}</span>
-      <span className={`grid min-h-12 w-12 place-items-center border border-r-0 transition ${square}`}>
+    <Link to={to} className={`group inline-flex max-w-full items-stretch overflow-hidden rounded-md text-sm font-medium ${className}`}>
+      <span className={`grid min-h-11 place-items-center border px-4 transition sm:min-h-12 sm:px-6 ${colors}`}>{children}</span>
+      <span className={`grid min-h-11 w-11 shrink-0 place-items-center border border-r-0 transition sm:min-h-12 sm:w-12 ${square}`}>
         <Icon size={17} />
       </span>
     </Link>

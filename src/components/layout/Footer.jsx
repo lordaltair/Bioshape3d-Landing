@@ -6,13 +6,13 @@ import ArrowButton from "../ArrowButton.jsx";
 export default function Footer() {
   return (
     <footer className="bg-spring-ink text-white">
-      <div className="mx-auto max-w-[1320px] px-5 py-16 md:px-8">
+      <div className="mx-auto max-w-[1320px] px-4 py-12 sm:px-5 sm:py-16 md:px-8">
         <div className="flex flex-col gap-8 border-b border-white/10 pb-12 md:flex-row md:items-center md:justify-between">
           <Link
             to="/"
-            className="text-3xl font-extrabold tracking-tight text-white"
+            className="text-2xl font-extrabold tracking-tight text-white sm:text-3xl"
           >
-            BioShape۳D
+            BIOSHAPE3D
           </Link>
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
@@ -25,10 +25,10 @@ export default function Footer() {
           </button>
         </div>
 
-        <div className="grid gap-12 py-14 lg:grid-cols-[360px_1fr]">
+        <div className="grid gap-10 py-10 sm:gap-12 sm:py-14 lg:grid-cols-[minmax(0,360px)_1fr]">
           <div>
-            <h3 className="text-3xl font-semibold leading-snug">
-              تیم BioShape۳D آماده است تا تمام اطلاعات مورد نیاز پروژه شما را
+            <h3 className="text-2xl font-semibold leading-snug sm:text-3xl">
+              تیم BIOSHAPE3D آماده است تا تمام اطلاعات مورد نیاز پروژه شما را
               ارائه کند
             </h3>
             <ArrowButton to="/contact" variant="light" className="mt-8">
@@ -60,7 +60,7 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="grid gap-8 sm:grid-cols-3">
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {navGroups.slice(0, 3).map((group) => (
               <div key={group.label}>
                 <h5 className="mb-5 text-lg font-semibold">{group.label}</h5>
@@ -78,12 +78,12 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="flex flex-col gap-4 border-t border-white/10 pt-8 text-sm text-white/50 md:flex-row md:items-center md:justify-between">
-          <p>
+        <div className="flex flex-col gap-3 border-t border-white/10 pt-6 text-sm text-white/50 sm:gap-4 sm:pt-8 md:flex-row md:items-center md:justify-between">
+          <p className="break-all">
             {/* <a href="tel:+390444557570" className="underline">+۳۹ ۰۴۴۴ ۵۵۷۵۷۰</a> */}
-            <span className="mx-4">info@bioshape۳d.com</span>
+            <span>info@BIOSHAPE3D.com</span>
           </p>
-          <p>Copyright ۲۰۲۶ BioShape۳D</p>
+          <p>Copyright ۲۰۲۶ BIOSHAPE3D</p>
         </div>
       </div>
     </footer>

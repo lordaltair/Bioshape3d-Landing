@@ -1,6 +1,6 @@
-# BioShape۳D Persian RTL Replica
+# BIOSHAPE3D Persian RTL Replica
 
-یک پروژه React/Vite/Tailwind برای وب سایت BioShape۳D با ساختار، حس بصری، ناوبری، کارت ها، اسلایدرها، فرم ها، CTAها و صفحات داخلی مشابه مرجع، به فارسی و راست چین.
+یک پروژه React/Vite/Tailwind برای وب سایت BIOSHAPE3D با ساختار، حس بصری، ناوبری، کارت ها، اسلایدرها، فرم ها، CTAها و صفحات داخلی مشابه مرجع، به فارسی و راست چین.
 
 ## ساختار
 

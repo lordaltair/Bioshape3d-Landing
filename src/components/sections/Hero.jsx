@@ -14,15 +14,15 @@ export default function Hero() {
         poster={assets.services.additive}
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/30 to-black/35" />
-      <div className="relative mx-auto grid w-full max-w-[1320px] gap-10 px-5 pb-16 pt-36 md:px-8 lg:grid-cols-[1fr_220px] lg:items-end">
+      <div className="relative mx-auto grid w-full max-w-[1320px] gap-8 px-4 pb-12 pt-28 sm:gap-10 sm:px-5 sm:pb-16 sm:pt-32 md:px-8 md:pt-36 lg:grid-cols-[1fr_220px] lg:items-end">
         <div className="max-w-4xl animate-reveal">
           <h1
             style={{ lineHeight: '1.4' }}
-            className="text-4xl font-semibold leading-tight md:text-5xl lg:text-6xl"
+            className="text-2xl font-semibold leading-tight sm:text-3xl md:text-5xl lg:text-6xl"
           >
-            BioShape۳D با عشق به فناوری، مواد پیشرفته، تحقیق و نوآوری
+            BIOSHAPE3D با عشق به فناوری، مواد پیشرفته، تحقیق و نوآوری
           </h1>
-          <p className="mt-7 max-w-2xl text-lg leading-9 text-white/82">
+          <p className="mt-5 max-w-2xl text-base leading-8 text-white/82 sm:mt-7 sm:text-lg sm:leading-9">
             از سال ۱۹۹۸ توان فنی، فناوری های پیشرفته چاپ سه بعدی و دانش تجربی
             خود را برای تبدیل ایده ها و پروژه های صنعتی به راهکارهای واقعی در
             اختیار مشتریان قرار داده ایم.

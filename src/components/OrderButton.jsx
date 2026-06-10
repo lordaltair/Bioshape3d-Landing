@@ -7,7 +7,7 @@ export default function OrderButton({ className = '', variant = 'dark' }) {
   return (
     <a
       href="http://app.bioshape3d.com/"
-      className={`inline-grid min-h-12 place-items-center border px-6 text-sm font-semibold transition ${styles} ${className}`}
+      className={`inline-grid min-h-11 place-items-center rounded-md border px-4 text-sm font-semibold transition sm:min-h-12 sm:px-6 ${styles} ${className}`}
     >
       سفارش دهید
     </a>

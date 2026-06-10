@@ -28,9 +28,9 @@ export default function ServicesShowcase() {
   };
 
   return (
-    <section id="services" className="bg-white py-20 md:py-28">
-      <div className="mx-auto max-w-[1320px] px-5 md:px-8">
-        <div className="mb-14 max-w-5xl">
+    <section id="services" className="bg-white py-12 sm:py-20 md:py-28">
+      <div className="mx-auto max-w-[1320px] px-4 sm:px-5 md:px-8">
+        <div className="mb-8 max-w-5xl sm:mb-14">
           <p className="mb-5 text-xs font-semibold uppercase tracking-[.22em] text-spring-muted">خدمات</p>
           <SectionTitle title="بهترین راهکارها و فناوری ها برای ساخت" muted="افزایشی" />
         </div>
@@ -68,7 +68,7 @@ export default function ServicesShowcase() {
             <button
               type="button"
               onClick={() => move(-1)}
-              className="grid h-12 w-12 place-items-center border border-spring-line text-spring-ink transition hover:bg-spring-ink hover:text-white"
+              className="grid h-12 w-12 place-items-center rounded-md border border-spring-line text-spring-ink transition hover:bg-spring-ink hover:text-white"
               aria-label="سرویس قبلی"
             >
               <ChevronRight size={20} />
@@ -76,7 +76,7 @@ export default function ServicesShowcase() {
             <button
               type="button"
               onClick={() => move(1)}
-              className="grid h-12 w-12 place-items-center border border-spring-line text-spring-ink transition hover:bg-spring-ink hover:text-white"
+              className="grid h-12 w-12 place-items-center rounded-md border border-spring-line text-spring-ink transition hover:bg-spring-ink hover:text-white"
               aria-label="سرویس بعدی"
             >
               <ChevronLeft size={20} />
