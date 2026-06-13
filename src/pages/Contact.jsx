@@ -3,7 +3,7 @@ import { Mail, MapPin, Phone } from "lucide-react";
 export default function Contact() {
   return (
     <section className="pt-28 pb-12 sm:pt-32 sm:pb-16 md:pt-36 md:pb-20">
-      <div className="mx-auto grid max-w-[1320px] gap-8 px-4 sm:gap-12 sm:px-5 md:px-8 lg:grid-cols-[.85fr_1.15fr]">
+      <div className="grid gap-8 px-10 sm:gap-12 lg:grid-cols-[.85fr_1.15fr]">
         <div>
           <p className="text-xs font-semibold uppercase tracking-[.22em] text-spring-muted">
             تماس

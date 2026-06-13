@@ -32,11 +32,17 @@ export default {
           '0%': { strokeDashoffset: '126' },
           '100%': { strokeDashoffset: '0' },
         },
+        dropdownArrow: {
+          '0%': { opacity: '0', transform: 'translateX(32px)' },
+          '72%': { opacity: '1', transform: 'translateX(12px)' },
+          '100%': { opacity: '1', transform: 'translateX(0)' },
+        },
       },
       animation: {
         reveal: 'reveal .75s cubic-bezier(.2,.75,.2,1) both',
         marquee: 'marquee 24s linear infinite',
-        ring: 'ring 2.6s linear infinite',
+        ring: 'ring 5.5s linear infinite',
+        dropdownArrow: 'dropdownArrow .9s cubic-bezier(.2,.75,.2,1) both',
       },
     },
   },

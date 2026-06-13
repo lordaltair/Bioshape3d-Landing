@@ -3,7 +3,7 @@ import ArrowButton from '../ArrowButton.jsx';
 
 export default function SectorSlider() {
   return (
-    <section className="bg-white py-4">
+    <section className="bg-white px-10 py-4">
       <div className="snap-x snap-mandatory overflow-x-auto">
         <div className="flex">
           {sectors.map(([title, desc, image]) => (

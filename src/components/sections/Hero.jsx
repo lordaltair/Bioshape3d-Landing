@@ -1,5 +1,6 @@
-import { assets } from '../../data/siteData.js';
-import OrderButton from '../OrderButton.jsx';
+import { ArrowDown } from "lucide-react";
+import { assets } from "../../data/siteData.js";
+import OrderButton from "../OrderButton.jsx";
 
 export default function Hero() {
   return (
@@ -14,10 +15,10 @@ export default function Hero() {
         poster={assets.services.additive}
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/30 to-black/35" />
-      <div className="relative mx-auto grid w-full max-w-[1320px] gap-8 px-4 pb-12 pt-28 sm:gap-10 sm:px-5 sm:pb-16 sm:pt-32 md:px-8 md:pt-36 lg:grid-cols-[1fr_220px] lg:items-end">
+      <div className="relative grid w-full gap-8 px-10 pb-12 pt-28 sm:gap-10 sm:pb-16 sm:pt-32 md:pt-36 lg:grid-cols-[1fr_60px] lg:items-end">
         <div className="max-w-4xl animate-reveal">
           <h1
-            style={{ lineHeight: '1.4' }}
+            style={{ lineHeight: "1.4" }}
             className="text-2xl font-semibold leading-tight sm:text-3xl md:text-5xl lg:text-6xl"
           >
             BIOSHAPE3D با عشق به فناوری، مواد پیشرفته، تحقیق و نوآوری
@@ -29,15 +30,42 @@ export default function Hero() {
           </p>
           <OrderButton variant="light" className="mt-8" />
         </div>
-        {/* Scroll-down control intentionally hidden.
-        <a href="#services" className="group flex items-center gap-4 text-sm text-white/85">
-          <svg className="h-14 w-14 -rotate-90" viewBox="0 0 50 50">
-            <circle cx="25" cy="25" r="20" fill="none" stroke="rgba(255,255,255,.24)" strokeWidth="1.5" />
-            <circle className="animate-ring" cx="25" cy="25" r="20" fill="none" stroke="#fff" strokeWidth="1.5" strokeDasharray="126" />
-          </svg>
-          پایین بروید
+
+        <a
+          href="#services"
+          className="group flex w-fit flex-col items-center gap-2 text-sm text-white/85 lg:justify-self-start"
+        >
+          <span className="relative grid h-14 w-14 place-items-center">
+            <svg
+              className="absolute inset-0 h-14 w-14 -rotate-90"
+              viewBox="0 0 50 50"
+            >
+              <circle
+                cx="25"
+                cy="25"
+                r="20"
+                fill="none"
+                stroke="rgba(255,255,255,.24)"
+                strokeWidth="1.5"
+              />
+              <circle
+                className="animate-ring"
+                cx="25"
+                cy="25"
+                r="20"
+                fill="none"
+                stroke="#fff"
+                strokeWidth="1.5"
+                strokeDasharray="126"
+              />
+            </svg>
+            <ArrowDown
+              size={18}
+              className="transition group-hover:translate-y-1"
+            />
+          </span>
+          <span>پایین بروید</span>
         </a>
-        */}
       </div>
     </section>
   );

@@ -6,7 +6,7 @@ import ArrowButton from "../ArrowButton.jsx";
 export default function Footer() {
   return (
     <footer className="bg-spring-ink text-white">
-      <div className="mx-auto max-w-[1320px] px-4 py-12 sm:px-5 sm:py-16 md:px-8">
+      <div className="px-10 py-12 sm:py-16">
         <div className="flex flex-col gap-8 border-b border-white/10 pb-12 md:flex-row md:items-center md:justify-between">
           <Link
             to="/"
@@ -46,7 +46,7 @@ export default function Footer() {
                 </a>
               ))}
             </div>
-            <div className="mt-8 flex items-end gap-4 opacity-80">
+            <div className="mt-28 flex items-end gap-4 opacity-80">
               <img
                 src={assets.footerBadge}
                 alt="POR"
@@ -55,7 +55,7 @@ export default function Footer() {
               <img
                 src={assets.footerLogos}
                 alt="گواهی ها"
-                className="max-h-16 max-w-[180px] object-contain"
+                className="max-h-16 object-contain"
               />
             </div>
           </div>

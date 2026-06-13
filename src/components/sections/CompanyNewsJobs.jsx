@@ -6,7 +6,7 @@ export default function CompanyNewsJobs() {
   return (
     <>
       <section className="bg-white py-12 sm:py-20">
-        <div className="mx-auto grid max-w-[1320px] gap-8 px-4 sm:gap-10 sm:px-5 md:px-8 lg:grid-cols-[1fr_1.1fr] lg:items-center">
+        <div className="grid gap-8 px-10 sm:gap-10 lg:grid-cols-[1fr_1.1fr] lg:items-center">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[.22em] text-spring-muted">
               جستجوی مواد
@@ -57,7 +57,7 @@ export default function CompanyNewsJobs() {
       </section>
 
       <section className="bg-white py-12 sm:py-20">
-        <div className="mx-auto max-w-[1320px] px-4 sm:px-5 md:px-8">
+        <div className="px-10">
           <div className="mb-8 flex flex-col gap-4 sm:mb-12 sm:gap-6 md:flex-row md:items-end md:justify-between">
             <SectionTitle title="آخرین خبرها" />
             <ArrowButton to="/news">بیشتر</ArrowButton>
@@ -85,7 +85,7 @@ export default function CompanyNewsJobs() {
       </section>
 
       <section className="bg-spring-ink py-12 text-white sm:py-20">
-        <div className="mx-auto max-w-[1320px] px-4 sm:px-5 md:px-8">
+        <div className="px-10">
           <div className="grid gap-8 sm:gap-10 lg:grid-cols-[minmax(0,360px)_1fr]">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[.22em] text-white/50">

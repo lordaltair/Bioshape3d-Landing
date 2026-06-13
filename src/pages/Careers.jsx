@@ -4,7 +4,7 @@ import SectionTitle from '../components/SectionTitle.jsx';
 export default function Careers() {
   return (
     <section className="bg-spring-ink pt-28 pb-12 text-white sm:pt-32 sm:pb-16 md:pt-36 md:pb-20">
-      <div className="mx-auto max-w-[1120px] px-4 sm:px-5 md:px-8">
+      <div className="px-10">
         <SectionTitle dark eyebrow="فرصت های شغلی" title="به تیم BIOSHAPE3D بپیوندید" muted="و آینده تولید را بسازید" />
         <div id="positions" className="mt-8 grid gap-4 sm:mt-14 sm:grid-cols-2 sm:gap-5">
           {jobs.map(([title, loc]) => (

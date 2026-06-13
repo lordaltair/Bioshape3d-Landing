@@ -12,7 +12,7 @@ export default function ServiceDetail({ forcedSlug }) {
       <section className="relative flex min-h-[50vh] items-end overflow-hidden bg-spring-ink pt-28 text-white sm:min-h-[60vh] sm:pt-32 md:min-h-[72vh] md:pt-36">
         <img src={service.image} alt={service.title} className="absolute inset-0 h-full w-full object-cover opacity-65" />
         <div className="absolute inset-0 bg-black/55" />
-        <div className="relative mx-auto w-full max-w-[1320px] px-4 pb-10 sm:px-5 sm:pb-16 md:px-8">
+        <div className="relative w-full px-10 pb-10 sm:pb-16">
           <div className="mb-5 flex flex-wrap gap-2 text-xs text-white/65 sm:mb-7 sm:text-sm">
             <Link to="/">خانه</Link><span>/</span><Link to="/services">خدمات</Link>
           </div>
@@ -26,7 +26,7 @@ export default function ServiceDetail({ forcedSlug }) {
       </section>
 
       <section className="py-12 sm:py-20">
-        <div className="mx-auto grid max-w-[1320px] gap-8 px-4 sm:gap-12 sm:px-5 md:px-8 lg:grid-cols-[1fr_minmax(0,420px)]">
+        <div className="grid gap-8 px-10 sm:gap-12 lg:grid-cols-[1fr_minmax(0,420px)]">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[.22em] text-spring-muted">{service.title}</p>
             <h2 className="mt-4 text-2xl font-semibold leading-tight sm:mt-5 sm:text-3xl md:text-5xl">چیست و چگونه انجام می شود</h2>

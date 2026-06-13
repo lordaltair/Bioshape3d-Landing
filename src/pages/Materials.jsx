@@ -4,7 +4,7 @@ import ArrowButton from '../components/ArrowButton.jsx';
 export default function Materials() {
   return (
     <section className="pt-28 pb-12 sm:pt-32 sm:pb-16 md:pt-36 md:pb-20">
-      <div className="mx-auto grid max-w-[1320px] gap-8 px-4 sm:gap-10 sm:px-5 md:px-8 lg:grid-cols-2 lg:items-center">
+      <div className="grid gap-8 px-10 sm:gap-10 lg:grid-cols-2 lg:items-center">
         <div>
           <p className="text-xs font-semibold uppercase tracking-[.22em] text-spring-muted">مواد</p>
           <h1 className="mt-4 text-3xl font-semibold leading-tight sm:mt-5 sm:text-4xl md:text-6xl">انتخاب ماده مناسب برای هر پروژه</h1>
