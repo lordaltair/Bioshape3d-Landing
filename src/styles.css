@@ -14,18 +14,26 @@
 
 html {
   scroll-behavior: smooth;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 body {
   margin: 0;
+  width: 100%;
+  min-width: 0;
   direction: rtl;
   font-family: Vazirmatn, system-ui, sans-serif;
   background: #fff;
   color: #303033;
   overflow-x: hidden;
   -webkit-text-size-adjust: 100%;
-  padding-left: env(safe-area-inset-left);
-  padding-right: env(safe-area-inset-right);
+}
+
+#root {
+  width: 100%;
+  min-width: 0;
+  overflow-x: hidden;
 }
 
 a {
@@ -68,6 +76,20 @@ button {
 
 .snap-x::-webkit-scrollbar-thumb {
   background: #3180e0;
+}
+
+@media (max-width: 639px) {
+  .px-10 {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .px-10 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

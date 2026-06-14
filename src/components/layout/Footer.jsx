@@ -7,7 +7,7 @@ export default function Footer() {
   return (
     <footer className="bg-spring-ink text-white">
       <div className="px-10 py-12 sm:py-16">
-        <div className="flex flex-col gap-8 border-b border-white/10 pb-12 md:flex-row md:items-center md:justify-between">
+        <div className="flex flex-col items-center gap-8 border-b border-white/10 pb-12 text-center md:flex-row md:justify-between md:text-right">
           <Link
             to="/"
             className="text-2xl font-extrabold tracking-tight text-white sm:text-3xl"
@@ -25,8 +25,8 @@ export default function Footer() {
           </button>
         </div>
 
-        <div className="grid gap-10 py-10 sm:gap-12 sm:py-14 lg:grid-cols-[minmax(0,360px)_1fr]">
-          <div>
+        <div className="grid gap-10 py-10 text-center sm:gap-12 sm:py-14 lg:grid-cols-[minmax(0,360px)_1fr] lg:text-right">
+          <div className="flex flex-col items-center lg:items-start">
             <h3 className="text-2xl font-semibold leading-snug sm:text-3xl">
               تیم BIOSHAPE3D آماده است تا تمام اطلاعات مورد نیاز پروژه شما را
               ارائه کند
@@ -34,7 +34,7 @@ export default function Footer() {
             <ArrowButton to="/contact" variant="light" className="mt-8">
               تماس با ما
             </ArrowButton>
-            <div className="mt-8 flex gap-3">
+            <div className="mt-8 flex justify-center gap-3 lg:justify-start">
               {[Facebook, Youtube, Linkedin].map((Icon, index) => (
                 <a
                   key={index}
@@ -46,7 +46,7 @@ export default function Footer() {
                 </a>
               ))}
             </div>
-            <div className="mt-28 flex items-end gap-4 opacity-80">
+            <div className="mt-16 flex items-end justify-center gap-4 opacity-80 sm:mt-20 lg:mt-28 lg:justify-start">
               <img
                 src={assets.footerBadge}
                 alt="POR"
@@ -78,7 +78,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="flex flex-col gap-3 border-t border-white/10 pt-6 text-sm text-white/50 sm:gap-4 sm:pt-8 md:flex-row md:items-center md:justify-between">
+        <div className="flex flex-col items-center gap-3 border-t border-white/10 pt-6 text-center text-sm text-white/50 sm:gap-4 sm:pt-8 md:flex-row md:justify-between md:text-right">
           <p className="break-all">
             {/* <a href="tel:+390444557570" className="underline">+۳۹ ۰۴۴۴ ۵۵۷۵۷۰</a> */}
             <span>info@BIOSHAPE3D.com</span>

@@ -6,11 +6,44 @@ import OrderButton from "../OrderButton.jsx";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const [panelVisible, setPanelVisible] = useState(false);
   const [mega, setMega] = useState(null);
   const headerRef = useRef(null);
+  const closeTimerRef = useRef(null);
+  const openFrameRef = useRef(null);
 
   const toggleMega = (label) => {
     setMega((current) => (current === label ? null : label));
+  };
+
+  const openMobileMenu = () => {
+    if (closeTimerRef.current) {
+      clearTimeout(closeTimerRef.current);
+      closeTimerRef.current = null;
+    }
+    if (openFrameRef.current) {
+      cancelAnimationFrame(openFrameRef.current);
+      openFrameRef.current = null;
+    }
+
+    setOpen(true);
+    setPanelVisible(false);
+    openFrameRef.current = requestAnimationFrame(() => {
+      openFrameRef.current = requestAnimationFrame(() => {
+        setPanelVisible(true);
+        openFrameRef.current = null;
+      });
+    });
+  };
+
+  const closeMobileMenu = () => {
+    if (!open || !panelVisible) return;
+
+    setPanelVisible(false);
+    closeTimerRef.current = setTimeout(() => {
+      setOpen(false);
+      closeTimerRef.current = null;
+    }, 720);
   };
 
   useEffect(() => {
@@ -26,26 +59,31 @@ export default function Header() {
     return () => document.removeEventListener("mousedown", handleOutsideClick);
   }, [mega]);
 
+  useEffect(() => () => {
+    if (closeTimerRef.current) clearTimeout(closeTimerRef.current);
+    if (openFrameRef.current) cancelAnimationFrame(openFrameRef.current);
+  }, []);
+
   return (
     <header ref={headerRef} className="fixed inset-x-0 top-0 z-50">
-      <div className="w-full px-10">
-        <nav className="mt-2 flex h-16 items-center justify-between gap-2 rounded-md border border-spring-line bg-white px-3 text-spring-ink shadow-spring backdrop-blur-xl sm:mt-4 sm:h-20 sm:px-4">
-          <div className="flex min-w-0 items-center gap-2 sm:gap-5">
+      <div className="w-full px-0 sm:px-5 xl:px-10">
+        <nav className="relative mt-0 grid h-14 grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-2 rounded-none border border-spring-line bg-white px-2 text-spring-ink shadow-spring backdrop-blur-xl sm:mt-4 sm:h-16 sm:rounded-md sm:px-3 xl:flex xl:h-20 xl:justify-between xl:px-4">
+          <div className="contents xl:flex xl:min-w-0 xl:items-center xl:gap-5">
             <button
-              className="grid h-10 w-10 shrink-0 place-items-center rounded-md lg:hidden"
-              onClick={() => setOpen(true)}
+              className="absolute right-2 top-1/2 grid h-9 w-9 -translate-y-1/2 place-items-center rounded-md xl:hidden"
+              onClick={openMobileMenu}
               aria-label="باز کردن منو"
             >
-              <Menu size={22} />
+              <Menu size={21} />
             </button>
-            <Link to="/" className="block min-w-0">
-              <span className="truncate text-lg font-extrabold tracking-tight text-spring-ink sm:text-2xl">
+            <Link to="/" className="absolute left-1/2 top-1/2 block min-w-0 -translate-x-1/2 -translate-y-1/2 xl:static xl:translate-x-0 xl:translate-y-0">
+              <span className="block max-w-[58vw] truncate text-sm font-extrabold tracking-tight text-spring-ink min-[360px]:text-base min-[430px]:text-lg sm:max-w-none sm:text-2xl">
                 BIOSHAPE3D
               </span>
             </Link>
           </div>
 
-          <div className="hidden flex-1 items-center justify-center gap-8 lg:flex">
+          <div className="hidden flex-1 items-center justify-center gap-6 xl:flex 2xl:gap-8">
             <Link
               to="/materials"
               className="rounded-md px-5 py-2 text-sm font-extrabold uppercase tracking-wide text-[#1A8EF9] transition hover:text-[#046ECF]"
@@ -93,11 +131,11 @@ export default function Header() {
             ))}
           </div>
 
-          <div className="flex shrink-0 items-center gap-2 lg:hidden">
-            <OrderButton className="!px-3 !text-xs sm:!px-4 sm:!text-sm" />
+          <div className="hidden min-w-0 shrink-0 items-center justify-end gap-2 xl:hidden">
+            <OrderButton className="hidden h-10 !min-h-10 !px-3 !text-xs min-[390px]:inline-grid sm:h-11 sm:!min-h-11 sm:!px-4 sm:!text-sm" />
           </div>
 
-          <div className="hidden items-center gap-3 lg:flex">
+          <div className="hidden items-center gap-3 xl:flex">
             <OrderButton className="h-12 min-h-12 w-32 px-6" />
             <Link
               to="/contact"
@@ -110,7 +148,7 @@ export default function Header() {
       </div>
 
       {mega && (
-        <div className="hidden lg:block">
+        <div className="hidden xl:block">
           <div className="mx-10 mt-2 rounded-md bg-white p-8 text-spring-ink shadow-spring animate-reveal">
             <div className="grid grid-cols-3 gap-x-10 gap-y-5">
               {navGroups
@@ -138,26 +176,26 @@ export default function Header() {
 
       {open && (
         <div
-          className="fixed inset-0 z-[80] bg-black/55 lg:hidden"
-          onClick={() => setOpen(false)}
+          className={`fixed inset-0 z-[80] bg-black/55 transition-opacity duration-700 ease-out xl:hidden ${panelVisible ? 'opacity-100' : 'opacity-0'}`}
+          onClick={closeMobileMenu}
         >
           <aside
-            className="mr-auto flex h-full w-[min(88vw,20rem)] max-w-sm flex-col overflow-y-auto bg-spring-ink p-5 pb-[max(1.25rem,env(safe-area-inset-bottom))] text-white shadow-spring sm:p-6"
+            className={`fixed inset-y-0 right-0 flex h-full w-[min(92vw,22rem)] max-w-sm flex-col overflow-y-auto bg-spring-ink p-5 pb-[max(1.25rem,env(safe-area-inset-bottom))] text-white shadow-spring transition-all duration-700 ease-[cubic-bezier(.22,1,.36,1)] [direction:ltr] sm:p-6 ${panelVisible ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'}`}
             onClick={(event) => event.stopPropagation()}
           >
-            <div className="flex items-center justify-between">
+            <div className="flex items-center justify-between [direction:rtl]">
               <span className="text-xl font-extrabold tracking-tight text-white sm:text-2xl">
                 BIOSHAPE3D
               </span>
               <button
                 className="grid h-11 w-11 place-items-center rounded-md"
-                onClick={() => setOpen(false)}
+                onClick={closeMobileMenu}
                 aria-label="بستن منو"
               >
                 <X />
               </button>
             </div>
-            <div className="mt-8 flex-1 space-y-5 overflow-y-auto sm:mt-10 sm:space-y-6">
+            <div className="mt-8 flex-1 space-y-5 sm:mt-10 sm:space-y-6 [direction:rtl]">
               {[
                 ...navGroups,
                 { label: "مواد", path: "/materials", items: [] },
@@ -167,7 +205,7 @@ export default function Header() {
                   className="border-b border-white/10 pb-4"
                 >
                   <summary className="flex cursor-pointer list-none items-center justify-between text-lg font-semibold sm:text-xl">
-                    <Link to={group.path} onClick={() => setOpen(false)}>
+                    <Link to={group.path} onClick={closeMobileMenu}>
                       {group.label}
                     </Link>
                     {group.items.length > 0 && (
@@ -179,7 +217,7 @@ export default function Header() {
                       <Link
                         key={label}
                         to={path}
-                        onClick={() => setOpen(false)}
+                        onClick={closeMobileMenu}
                       >
                         {label}
                       </Link>
@@ -191,7 +229,7 @@ export default function Header() {
                 <Link
                   key={path}
                   to={path}
-                  onClick={() => setOpen(false)}
+                  onClick={closeMobileMenu}
                   className="block text-lg font-semibold sm:text-xl"
                 >
                   {label}
@@ -199,7 +237,7 @@ export default function Header() {
               ))}
               <Link
                 to="/contact"
-                onClick={() => setOpen(false)}
+                onClick={closeMobileMenu}
                 className="block w-full rounded-md border border-white/25 py-3 text-center text-sm font-semibold"
               >
                 تماس با ما
