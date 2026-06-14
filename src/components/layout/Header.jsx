@@ -65,14 +65,19 @@ export default function Header() {
                 >
                   <span>{group.label}</span>
                   <span
-                    className="grid h-6 w-6 place-items-center rounded-md text-[#1A8EF9] transition hover:text-[#046ECF]"
+                    className="relative grid h-6 w-6 place-items-center rounded-md text-[#1A8EF9] transition hover:text-[#046ECF]"
                     aria-hidden="true"
                   >
-                    {isOpen ? (
-                      <X size={15} strokeWidth={2.3} />
-                    ) : (
-                      <Plus size={15} strokeWidth={2.3} />
-                    )}
+                    <Plus
+                      size={15}
+                      strokeWidth={2.3}
+                      className={`absolute transition-all duration-300 ${isOpen ? 'rotate-90 scale-75 opacity-0' : 'rotate-0 scale-100 opacity-100'}`}
+                    />
+                    <X
+                      size={15}
+                      strokeWidth={2.3}
+                      className={`absolute transition-all duration-300 ${isOpen ? 'rotate-0 scale-100 opacity-100' : '-rotate-90 scale-75 opacity-0'}`}
+                    />
                   </span>
                 </button>
               );
