@@ -131,19 +131,19 @@ export default function TechnologyPanel() {
                 type="button"
                 onClick={() => goTo(active - 1)}
                 disabled={active === 0}
-                className="grid min-h-11 w-11 place-items-center rounded-md border border-white/15 bg-black text-white transition hover:bg-spring-charcoal disabled:pointer-events-none disabled:opacity-45 sm:min-h-12 sm:w-12"
+                className="group grid min-h-11 w-11 place-items-center rounded-md border border-white/15 bg-black text-white transition hover:bg-spring-charcoal disabled:pointer-events-none disabled:opacity-45 sm:min-h-12 sm:w-12"
                 aria-label="فناوری قبلی"
               >
-                <ArrowDownRight size={18} strokeWidth={1.8} />
+                <ArrowDownRight className="transition-transform duration-300 group-hover:-rotate-45 group-hover:scale-125" size={18} strokeWidth={1.8} />
               </button>
               <button
                 type="button"
                 onClick={() => goTo(active + 1)}
                 disabled={active === maxActive}
-                className="grid min-h-11 w-11 place-items-center rounded-md border border-white/15 bg-black text-white transition hover:bg-spring-charcoal disabled:pointer-events-none disabled:opacity-45 sm:min-h-12 sm:w-12"
+                className="group grid min-h-11 w-11 place-items-center rounded-md border border-white/15 bg-black text-white transition hover:bg-spring-charcoal disabled:pointer-events-none disabled:opacity-45 sm:min-h-12 sm:w-12"
                 aria-label="فناوری بعدی"
               >
-                <ArrowUpLeft size={18} strokeWidth={1.8} />
+                <ArrowUpLeft className="transition-transform duration-300 group-hover:-rotate-45 group-hover:scale-125" size={18} strokeWidth={1.8} />
               </button>
             </div>
 

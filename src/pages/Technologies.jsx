@@ -121,8 +121,11 @@ export default function Technologies() {
   const [name, label, desc] = selected;
   const detail = technologyDetails[name];
   const imagePaths = technologyImagePaths[name.toUpperCase()];
-  const visibleImages = [activeImage, (activeImage + 1) % imagePaths.length];
-  const imageProgress = ((activeImage + 1) / imagePaths.length) * 100;
+  const maxActiveImage = Math.max(0, imagePaths.length - 2);
+  const visibleImages = [activeImage, activeImage + 1].filter(
+    (imageIndex) => imageIndex < imagePaths.length,
+  );
+  const imageProgress = ((activeImage + 1) / (maxActiveImage + 1)) * 100;
 
   const scrollToDetail = () => {
     detailRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -160,8 +163,7 @@ export default function Technologies() {
 
   const changeImage = (direction) => {
     setActiveImage(
-      (current) =>
-        (current + direction + imagePaths.length) % imagePaths.length,
+      (current) => Math.min(Math.max(current + direction, 0), maxActiveImage),
     );
   };
 
@@ -263,18 +265,20 @@ export default function Technologies() {
                   <button
                     type="button"
                     onClick={() => changeImage(-1)}
-                    className="grid h-11 w-11 place-items-center rounded-md border border-white/15 bg-black text-white transition hover:bg-spring-charcoal"
+                    disabled={activeImage === 0}
+                    className="group grid h-11 w-11 place-items-center rounded-md border border-white/15 bg-black text-white transition hover:bg-spring-charcoal disabled:pointer-events-none disabled:opacity-45"
                     aria-label="تصویر قبلی"
                   >
-                    <ArrowDownRight size={18} strokeWidth={1.8} />
+                    <ArrowDownRight className="transition-transform duration-300 group-hover:-rotate-45 group-hover:scale-125" size={18} strokeWidth={1.8} />
                   </button>
                   <button
                     type="button"
                     onClick={() => changeImage(1)}
-                    className="grid h-11 w-11 place-items-center rounded-md border border-white/15 bg-black text-white transition hover:bg-spring-charcoal"
+                    disabled={activeImage === maxActiveImage}
+                    className="group grid h-11 w-11 place-items-center rounded-md border border-white/15 bg-black text-white transition hover:bg-spring-charcoal disabled:pointer-events-none disabled:opacity-45"
                     aria-label="تصویر بعدی"
                   >
-                    <ArrowUpLeft size={18} strokeWidth={1.8} />
+                    <ArrowUpLeft className="transition-transform duration-300 group-hover:-rotate-45 group-hover:scale-125" size={18} strokeWidth={1.8} />
                   </button>
                 </div>
 

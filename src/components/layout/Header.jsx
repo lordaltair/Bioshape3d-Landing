@@ -81,9 +81,15 @@ export default function Header() {
             </button>
             <Link
               to="/"
-              className="absolute left-1/2 top-1/2 block min-w-0 -translate-x-1/2 -translate-y-1/2 xl:static xl:translate-x-0 xl:translate-y-0"
+              className="absolute left-1/2 top-1/2 flex min-w-0 -translate-x-1/2 -translate-y-1/2 items-center gap-2 xl:static xl:translate-x-0 xl:translate-y-0"
             >
-              <span className="block max-w-[58vw] truncate text-sm font-extrabold tracking-tight text-spring-ink min-[360px]:text-base min-[430px]:text-lg sm:max-w-none sm:text-2xl">
+              <img
+                src="/bioshape3d-logo.png"
+                alt=""
+                className="h-8 w-8 shrink-0 object-contain sm:h-10 sm:w-10 xl:h-12 xl:w-12"
+                aria-hidden="true"
+              />
+              <span className="block max-w-[52vw] truncate text-sm font-extrabold tracking-tight text-[#1f6170] min-[360px]:text-base min-[430px]:text-lg sm:max-w-none sm:text-2xl">
                 BIOSHAPE3D
               </span>
             </Link>
@@ -184,9 +190,17 @@ export default function Header() {
             onClick={(event) => event.stopPropagation()}
           >
             <div className="flex items-center justify-between [direction:rtl]">
-              <span className="text-xl font-extrabold tracking-tight text-white sm:text-2xl">
-                BIOSHAPE3D
-              </span>
+              <div className="flex items-center gap-2">
+                <img
+                  src="/bioshape3d-logo.png"
+                  alt=""
+                  className="h-10 w-10 shrink-0 object-contain"
+                  aria-hidden="true"
+                />
+                <span className="text-xl font-extrabold tracking-tight text-[#6ca7b6] sm:text-2xl">
+                  BIOSHAPE3D
+                </span>
+              </div>
               <button
                 className="grid h-11 w-11 place-items-center rounded-md"
                 onClick={closeMobileMenu}
