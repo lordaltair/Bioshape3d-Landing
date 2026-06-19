@@ -195,7 +195,7 @@ export default function Technologies() {
                 className={`rounded-md border px-4 py-3 text-sm font-semibold transition ${
                   selectedTechnology === techName
                     ? "border-spring-ink bg-spring-ink text-white"
-                    : "border-spring-line bg-white text-spring-ink hover:border-[#1A8EF9] hover:text-[#1A8EF9]"
+                    : "border-spring-line bg-white text-spring-ink hover:border-[#1f6170] hover:text-[#1f6170]"
                 }`}
               >
                 {techName}

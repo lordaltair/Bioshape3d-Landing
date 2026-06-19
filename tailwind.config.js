@@ -12,7 +12,7 @@ export default {
           charcoal: '#303033',
           muted: '#b4b5ba',
           line: '#e5e5e7',
-          blue: '#3180e0',
+          blue: '#1f6170',
           paper: '#f7f7f8',
         },
       },

@@ -2,7 +2,7 @@ export default function OrderButton({ className = '', variant = 'dark' }) {
   const styles =
     variant === 'light'
       ? 'border-white/35 text-white hover:bg-white hover:text-spring-ink'
-      : 'border-spring-blue bg-spring-blue text-white hover:border-[#046ECF] hover:bg-[#046ECF]';
+      : 'border-spring-blue bg-spring-blue text-white hover:border-[#174b57] hover:bg-[#174b57]';
 
   return (
     <a

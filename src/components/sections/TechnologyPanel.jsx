@@ -119,7 +119,7 @@ export default function TechnologyPanel() {
                       </div>
                       <Link
                         to={`/technologies?tech=${encodeURIComponent(name)}#technology-detail`}
-                        className="mt-7 inline-grid min-h-14 w-full max-w-[224px] place-items-center rounded-md border border-white/25 px-6 text-sm font-semibold text-white transition hover:border-[#1A8EF9] hover:bg-[#1A8EF9] group-hover:border-spring-ink/25 group-hover:text-spring-ink group-hover:hover:border-[#1A8EF9] group-hover:hover:text-white"
+                        className="mt-7 inline-grid min-h-14 w-full max-w-[224px] place-items-center rounded-md border border-white/25 px-6 text-sm font-semibold text-white transition hover:border-[#1f6170] hover:bg-[#1f6170] group-hover:border-spring-ink/25 group-hover:text-spring-ink group-hover:hover:border-[#1f6170] group-hover:hover:text-white"
                       >
                         بیشتر بدانید
                       </Link>

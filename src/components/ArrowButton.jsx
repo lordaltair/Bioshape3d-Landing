@@ -10,12 +10,12 @@ export default function ArrowButton({
 }) {
   const colors =
     variant === "black"
-      ? "border-black bg-black text-white group-hover:border-[#1A8EF9] group-hover:bg-[#1A8EF9]"
-      : "border-[#1A8EF9] bg-[#1A8EF9] text-white group-hover:border-[#046ECF] group-hover:bg-[#046ECF]";
+      ? "border-black bg-black text-white group-hover:border-[#1f6170] group-hover:bg-[#1f6170]"
+      : "border-[#1f6170] bg-[#1f6170] text-white group-hover:border-[#174b57] group-hover:bg-[#174b57]";
   const square =
     variant === "black"
-      ? "border-black bg-black text-white group-hover:border-[#1A8EF9] group-hover:bg-[#1A8EF9]"
-      : "border-[#1A8EF9] bg-[#1A8EF9] text-white group-hover:border-[#046ECF] group-hover:bg-[#046ECF]";
+      ? "border-black bg-black text-white group-hover:border-[#1f6170] group-hover:bg-[#1f6170]"
+      : "border-[#1f6170] bg-[#1f6170] text-white group-hover:border-[#174b57] group-hover:bg-[#174b57]";
   const Icon = icon === "config" ? SlidersHorizontal : ArrowUpLeft;
   const iconMotion =
     icon === "config"

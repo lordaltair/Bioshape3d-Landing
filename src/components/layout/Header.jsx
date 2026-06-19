@@ -109,7 +109,7 @@ export default function Header() {
                 >
                   <span>{group.label}</span>
                   <span
-                    className="relative grid h-6 w-6 place-items-center rounded-md text-[#1A8EF9] transition hover:text-[#046ECF]"
+                    className="relative grid h-6 w-6 place-items-center rounded-md text-[#1f6170] transition hover:text-[#174b57]"
                     aria-hidden="true"
                   >
                     <Plus
@@ -164,14 +164,14 @@ export default function Header() {
                     key={label}
                     to={path}
                     onClick={() => setMega(null)}
-                    className="group inline-flex w-fit flex-row-reverse items-center px-10 py-1 text-spring-ink transition duration-300 hover:text-[#1A8EF9]"
+                    className="group inline-flex w-fit flex-row-reverse items-center px-10 py-1 text-spring-ink transition duration-300 hover:text-[#1f6170]"
                   >
                     <span className="text-base font-bold transition-transform duration-700 group-hover:-translate-x-3 sm:text-lg">
                       {label}
                     </span>
                     <ArrowLeft
                       size={17}
-                      className="translate-x-8 text-[#1A8EF9] opacity-0 group-hover:animate-dropdownArrow"
+                      className="translate-x-8 text-[#1f6170] opacity-0 group-hover:animate-dropdownArrow"
                     />
                   </Link>
                 ))}

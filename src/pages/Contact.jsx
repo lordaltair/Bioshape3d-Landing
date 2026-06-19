@@ -45,7 +45,7 @@ export default function Contact() {
                   href={mapLink}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex min-h-11 w-full items-center justify-center rounded-md bg-[#1A8EF9] px-5 text-sm font-semibold text-white transition hover:bg-[#046ECF] sm:w-auto"
+                  className="inline-flex min-h-11 w-full items-center justify-center rounded-md bg-[#1f6170] px-5 text-sm font-semibold text-white transition hover:bg-[#174b57] sm:w-auto"
                 >
                   مشاهده در Google Maps
                 </a>

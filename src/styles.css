@@ -46,7 +46,7 @@ video {
 }
 
 ::selection {
-  background: #3180e0;
+  background: #1f6170;
   color: #fff;
 }
 
@@ -78,7 +78,7 @@ button {
 
 .snap-x {
   scrollbar-width: thin;
-  scrollbar-color: #3180e0 #e5e5e7;
+  scrollbar-color: #1f6170 #e5e5e7;
 }
 
 .snap-x::-webkit-scrollbar {
@@ -90,7 +90,7 @@ button {
 }
 
 .snap-x::-webkit-scrollbar-thumb {
-  background: #3180e0;
+  background: #1f6170;
 }
 
 @media (max-width: 639px) {
