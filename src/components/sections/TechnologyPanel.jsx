@@ -61,7 +61,10 @@ export default function TechnologyPanel() {
     <>
       <section className="bg-spring-ink py-12 text-white sm:py-20 md:py-28">
         <div className="px-10">
-          <div className="flex flex-col gap-6 sm:gap-8 lg:grid lg:grid-cols-[1fr_auto] lg:items-end">
+          <div
+            data-reveal
+            className="flex flex-col gap-6 sm:gap-8 lg:grid lg:grid-cols-[1fr_auto] lg:items-end"
+          >
             <SectionTitle
               dark
               eyebrow="فناوری ها"
@@ -78,6 +81,8 @@ export default function TechnologyPanel() {
           </div>
 
           <div
+            data-reveal
+            style={{ "--reveal-delay": "140ms" }}
             className="mt-8 overflow-hidden pb-2 sm:mt-14"
             onTouchStart={(event) => setTouchStart(event.touches[0].clientX)}
             onTouchEnd={handleTouchEnd}
@@ -125,7 +130,11 @@ export default function TechnologyPanel() {
             </div>
           </div>
 
-          <div className="mt-6 flex items-center gap-8 sm:mt-10">
+          <div
+            data-reveal
+            style={{ "--reveal-delay": "240ms" }}
+            className="mt-6 flex items-center gap-8 sm:mt-10"
+          >
             <div className="flex shrink-0 items-center gap-2">
               <button
                 type="button"
@@ -162,7 +171,7 @@ export default function TechnologyPanel() {
 
       <section className="bg-white py-12 sm:py-20">
         <div className="px-10">
-          <div className="mb-8 max-w-5xl sm:mb-14">
+          <div data-reveal className="mb-8 max-w-5xl sm:mb-14">
             <p className="mb-5 text-base font-semibold uppercase tracking-[.22em] text-spring-muted">
               کاربردها
             </p>
@@ -173,7 +182,12 @@ export default function TechnologyPanel() {
           </div>
           <div className="mt-8 grid gap-8 text-center sm:mt-14 sm:gap-10 md:grid-cols-3">
             {applications.map(([title, desc], index) => (
-              <div key={title} className="animate-reveal">
+              <div
+                key={title}
+                data-reveal
+                style={{ "--reveal-delay": `${index * 120}ms` }}
+                className="animate-reveal"
+              >
                 <div className="mx-auto grid h-20 w-20 place-items-center rounded-full border border-spring-line text-spring-blue">
                   {toPersianDigits(index + 1)}
                 </div>

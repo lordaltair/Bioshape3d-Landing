@@ -28,7 +28,7 @@ export default function ServicesShowcase() {
   return (
     <section id="services" className="bg-white py-12 sm:py-20 md:py-28">
       <div className="px-10">
-        <div className="mb-8 max-w-5xl sm:mb-14">
+        <div data-reveal className="mb-8 max-w-5xl sm:mb-14">
           <p className="mb-5 text-base font-semibold uppercase tracking-[.22em] text-spring-muted">
             خدمات
           </p>
@@ -39,6 +39,8 @@ export default function ServicesShowcase() {
         </div>
 
         <div
+          data-reveal
+          style={{ "--reveal-delay": "120ms" }}
           className="overflow-hidden pb-6"
           onTouchStart={(event) => setTouchStart(event.touches[0].clientX)}
           onTouchEnd={handleTouchEnd}
@@ -55,7 +57,11 @@ export default function ServicesShowcase() {
           </div>
         </div>
 
-        <div className="mt-6 flex items-center gap-8 sm:mt-10">
+        <div
+          data-reveal
+          style={{ "--reveal-delay": "220ms" }}
+          className="mt-6 flex items-center gap-8 sm:mt-10"
+        >
           <div className="flex shrink-0 items-center gap-2">
             <button
               type="button"

@@ -7,13 +7,21 @@ export default function CompanyNewsJobs() {
     <>
       <section className="bg-white py-12 sm:py-20">
         <div className="px-10">
-          <div className="mb-8 flex flex-col gap-4 sm:mb-12 sm:gap-6 md:flex-row md:items-end md:justify-between">
+          <div
+            data-reveal
+            className="mb-8 flex flex-col gap-4 sm:mb-12 sm:gap-6 md:flex-row md:items-end md:justify-between"
+          >
             <SectionTitle title="آخرین مطالب بلاگ" />
             <ArrowButton to="/blog">بیشتر</ArrowButton>
           </div>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {news.map(([title, desc, image]) => (
-              <article key={title} className="group">
+            {news.map(([title, desc, image], index) => (
+              <article
+                key={title}
+                data-reveal
+                style={{ "--reveal-delay": `${index * 120}ms` }}
+                className="group"
+              >
                 <img
                   src={image}
                   alt={title}

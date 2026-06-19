@@ -4,7 +4,10 @@ import ArrowButton from "../ArrowButton.jsx";
 export default function SectorSlider() {
   return (
     <section className="bg-white px-10 py-8 sm:py-12">
-      <div className="mb-6 flex flex-col gap-4 sm:mb-8 sm:flex-row sm:items-end sm:justify-between">
+      <div
+        data-reveal
+        className="mb-6 flex flex-col gap-4 sm:mb-8 sm:flex-row sm:items-end sm:justify-between"
+      >
         <h2 className="text-2xl font-semibold text-spring-ink sm:text-3xl md:text-5xl">
           صنایع
         </h2>
@@ -12,7 +15,11 @@ export default function SectorSlider() {
           همه صنایع
         </ArrowButton>
       </div>
-      <div className="snap-x snap-mandatory overflow-x-auto">
+      <div
+        data-reveal
+        style={{ "--reveal-delay": "140ms" }}
+        className="snap-x snap-mandatory overflow-x-auto"
+      >
         <div className="flex">
           {sectors.map(([title, desc, image]) => (
             <article
