@@ -46,18 +46,18 @@ export default function Footer() {
                 </a>
               ))}
             </div>
-            <div className="mt-16 flex items-end justify-center gap-4 opacity-80 sm:mt-20 lg:mt-28 lg:justify-start">
-              <img
+            {/* <div className="mt-16 flex items-end justify-center gap-4 opacity-80 sm:mt-20 lg:mt-28 lg:justify-start"> */}
+            {/* <img
                 src={assets.footerBadge}
                 alt="POR"
                 className="h-20 w-20 rounded object-cover"
-              />
-              <img
+              /> */}
+            {/* <img
                 src={assets.footerLogos}
                 alt="گواهی ها"
                 className="max-h-16 object-contain"
-              />
-            </div>
+              /> */}
+            {/* </div> */}
           </div>
 
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">

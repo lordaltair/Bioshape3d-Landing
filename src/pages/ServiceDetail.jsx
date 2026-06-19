@@ -1,26 +1,39 @@
-import { useParams, Link } from 'react-router-dom';
-import { services, technologies } from '../data/siteData.js';
-import ArrowButton from '../components/ArrowButton.jsx';
-import OrderButton from '../components/OrderButton.jsx';
+import { useParams, Link } from "react-router-dom";
+import { services, technologies } from "../data/siteData.js";
+import ArrowButton from "../components/ArrowButton.jsx";
+import OrderButton from "../components/OrderButton.jsx";
 
 export default function ServiceDetail({ forcedSlug }) {
   const { slug } = useParams();
-  const service = services.find((item) => item.slug === (forcedSlug || slug)) || services[0];
+  const service =
+    services.find((item) => item.slug === (forcedSlug || slug)) || services[0];
 
   return (
     <>
       <section className="relative flex min-h-[50vh] items-end overflow-hidden bg-spring-ink pt-28 text-white sm:min-h-[60vh] sm:pt-32 md:min-h-[72vh] md:pt-36">
-        <img src={service.image} alt={service.title} className="absolute inset-0 h-full w-full object-cover opacity-65" />
+        <img
+          src={service.image}
+          alt={service.title}
+          className="absolute inset-0 h-full w-full object-cover opacity-65"
+        />
         <div className="absolute inset-0 bg-black/55" />
         <div className="relative w-full px-10 pb-10 sm:pb-16">
           <div className="mb-5 flex flex-wrap gap-2 text-xs text-white/65 sm:mb-7 sm:text-sm">
-            <Link to="/">خانه</Link><span>/</span><Link to="/services">خدمات</Link>
+            <Link to="/">خانه</Link>
+            <span>/</span>
+            <Link to="/services">خدمات</Link>
           </div>
-          <h1 className="max-w-4xl text-3xl font-semibold leading-tight sm:text-4xl md:text-5xl lg:text-7xl">{service.title}</h1>
-          <p className="mt-5 max-w-2xl text-base leading-8 text-white/82 sm:mt-7 sm:text-lg sm:leading-9">{service.intro}</p>
+          <h1 className="max-w-4xl text-3xl font-semibold leading-tight sm:text-4xl md:text-5xl lg:text-7xl">
+            {service.title}
+          </h1>
+          <p className="mt-5 max-w-2xl text-base leading-8 text-white/82 sm:mt-7 sm:text-lg sm:leading-9">
+            {service.intro}
+          </p>
           <div className="mt-6 flex flex-col gap-2 sm:mt-8 sm:flex-row sm:flex-wrap sm:gap-3">
             <OrderButton variant="light" />
-            <ArrowButton to="/contact" variant="light">درخواست مشاوره</ArrowButton>
+            <ArrowButton to="/contact" variant="light">
+              درخواست مشاوره
+            </ArrowButton>
           </div>
         </div>
       </section>
@@ -28,18 +41,37 @@ export default function ServiceDetail({ forcedSlug }) {
       <section className="py-12 sm:py-20">
         <div className="grid gap-8 px-10 sm:gap-12 lg:grid-cols-[1fr_minmax(0,420px)]">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[.22em] text-spring-muted">{service.title}</p>
-            <h2 className="mt-4 text-2xl font-semibold leading-tight sm:mt-5 sm:text-3xl md:text-5xl">چیست و چگونه انجام می شود</h2>
-            <p className="mt-5 text-base leading-8 text-spring-charcoal/75 sm:mt-7 sm:text-lg sm:leading-9">{service.body}</p>
+            <p className="text-xs font-semibold uppercase tracking-[.22em] text-spring-muted">
+              {service.title}
+            </p>
+            <h2 className="mt-4 text-2xl font-semibold leading-tight sm:mt-5 sm:text-3xl md:text-5xl">
+              چیست و چگونه انجام می شود
+            </h2>
+            <p className="mt-5 text-base leading-8 text-spring-charcoal/75 sm:mt-7 sm:text-lg sm:leading-9">
+              {service.body}
+            </p>
             <ul className="mt-8 grid gap-3">
-              {service.benefits.map((benefit) => <li key={benefit} className="border-r-2 border-spring-blue pr-4 text-spring-charcoal/80">{benefit}</li>)}
+              {service.benefits.map((benefit) => (
+                <li
+                  key={benefit}
+                  className="border-r-2 border-spring-blue pr-4 text-spring-charcoal/80"
+                >
+                  {benefit}
+                </li>
+              ))}
             </ul>
           </div>
           <aside className="rounded-lg bg-spring-paper p-5 sm:p-8">
-            <h3 className="text-xl font-semibold sm:text-2xl">فناوری های مرتبط</h3>
+            <h3 className="text-xl font-semibold sm:text-2xl">
+              فناوری های مرتبط
+            </h3>
             <div className="mt-5 grid gap-3 sm:mt-6">
               {technologies.slice(0, 5).map(([name, label]) => (
-                <Link key={name} to="/technologies" className="flex flex-col gap-1 border border-spring-line bg-white p-4 transition hover:border-spring-blue sm:flex-row sm:items-center sm:justify-between sm:gap-3">
+                <Link
+                  key={name}
+                  to="/technologies"
+                  className="flex flex-col gap-1 border border-spring-line bg-white p-4 transition hover:border-spring-blue sm:flex-row sm:items-center sm:justify-between sm:gap-3"
+                >
                   <span className="font-medium">{name}</span>
                   <span className="text-sm text-spring-muted">{label}</span>
                 </Link>

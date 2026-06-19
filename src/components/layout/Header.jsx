@@ -59,10 +59,13 @@ export default function Header() {
     return () => document.removeEventListener("mousedown", handleOutsideClick);
   }, [mega]);
 
-  useEffect(() => () => {
-    if (closeTimerRef.current) clearTimeout(closeTimerRef.current);
-    if (openFrameRef.current) cancelAnimationFrame(openFrameRef.current);
-  }, []);
+  useEffect(
+    () => () => {
+      if (closeTimerRef.current) clearTimeout(closeTimerRef.current);
+      if (openFrameRef.current) cancelAnimationFrame(openFrameRef.current);
+    },
+    [],
+  );
 
   return (
     <header ref={headerRef} className="fixed inset-x-0 top-0 z-50">
@@ -76,7 +79,10 @@ export default function Header() {
             >
               <Menu size={21} />
             </button>
-            <Link to="/" className="absolute left-1/2 top-1/2 block min-w-0 -translate-x-1/2 -translate-y-1/2 xl:static xl:translate-x-0 xl:translate-y-0">
+            <Link
+              to="/"
+              className="absolute left-1/2 top-1/2 block min-w-0 -translate-x-1/2 -translate-y-1/2 xl:static xl:translate-x-0 xl:translate-y-0"
+            >
               <span className="block max-w-[58vw] truncate text-sm font-extrabold tracking-tight text-spring-ink min-[360px]:text-base min-[430px]:text-lg sm:max-w-none sm:text-2xl">
                 BIOSHAPE3D
               </span>
@@ -84,12 +90,6 @@ export default function Header() {
           </div>
 
           <div className="hidden flex-1 items-center justify-center gap-6 xl:flex 2xl:gap-8">
-            <Link
-              to="/materials"
-              className="rounded-md px-5 py-2 text-sm font-extrabold uppercase tracking-wide text-[#1A8EF9] transition hover:text-[#046ECF]"
-            >
-              مواد
-            </Link>
             {navGroups.map((group) => {
               const isOpen = mega === group.label;
 
@@ -109,12 +109,12 @@ export default function Header() {
                     <Plus
                       size={15}
                       strokeWidth={2.3}
-                      className={`absolute transition-all duration-300 ${isOpen ? 'rotate-90 scale-75 opacity-0' : 'rotate-0 scale-100 opacity-100'}`}
+                      className={`absolute transition-all duration-300 ${isOpen ? "rotate-90 scale-75 opacity-0" : "rotate-0 scale-100 opacity-100"}`}
                     />
                     <X
                       size={15}
                       strokeWidth={2.3}
-                      className={`absolute transition-all duration-300 ${isOpen ? 'rotate-0 scale-100 opacity-100' : '-rotate-90 scale-75 opacity-0'}`}
+                      className={`absolute transition-all duration-300 ${isOpen ? "rotate-0 scale-100 opacity-100" : "-rotate-90 scale-75 opacity-0"}`}
                     />
                   </span>
                 </button>
@@ -176,11 +176,11 @@ export default function Header() {
 
       {open && (
         <div
-          className={`fixed inset-0 z-[80] bg-black/55 transition-opacity duration-700 ease-out xl:hidden ${panelVisible ? 'opacity-100' : 'opacity-0'}`}
+          className={`fixed inset-0 z-[80] bg-black/55 transition-opacity duration-700 ease-out xl:hidden ${panelVisible ? "opacity-100" : "opacity-0"}`}
           onClick={closeMobileMenu}
         >
           <aside
-            className={`fixed inset-y-0 right-0 flex h-full w-[min(92vw,22rem)] max-w-sm flex-col overflow-y-auto bg-spring-ink p-5 pb-[max(1.25rem,env(safe-area-inset-bottom))] text-white shadow-spring transition-all duration-700 ease-[cubic-bezier(.22,1,.36,1)] [direction:ltr] sm:p-6 ${panelVisible ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'}`}
+            className={`fixed inset-y-0 right-0 flex h-full w-[min(92vw,22rem)] max-w-sm flex-col overflow-y-auto bg-spring-ink p-5 pb-[max(1.25rem,env(safe-area-inset-bottom))] text-white shadow-spring transition-all duration-700 ease-[cubic-bezier(.22,1,.36,1)] [direction:ltr] sm:p-6 ${panelVisible ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"}`}
             onClick={(event) => event.stopPropagation()}
           >
             <div className="flex items-center justify-between [direction:rtl]">
@@ -196,10 +196,7 @@ export default function Header() {
               </button>
             </div>
             <div className="mt-8 flex-1 space-y-5 sm:mt-10 sm:space-y-6 [direction:rtl]">
-              {[
-                ...navGroups,
-                { label: "مواد", path: "/materials", items: [] },
-              ].map((group) => (
+              {navGroups.map((group) => (
                 <details
                   key={group.label}
                   className="border-b border-white/10 pb-4"
@@ -214,11 +211,7 @@ export default function Header() {
                   </summary>
                   <div className="mt-4 grid gap-3 text-white/70">
                     {group.items.map(([label, path]) => (
-                      <Link
-                        key={label}
-                        to={path}
-                        onClick={closeMobileMenu}
-                      >
+                      <Link key={label} to={path} onClick={closeMobileMenu}>
                         {label}
                       </Link>
                     ))}

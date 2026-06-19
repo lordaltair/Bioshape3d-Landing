@@ -29,7 +29,7 @@ export default function ServicesShowcase() {
     <section id="services" className="bg-white py-12 sm:py-20 md:py-28">
       <div className="px-10">
         <div className="mb-8 max-w-5xl sm:mb-14">
-          <p className="mb-5 text-xs font-semibold uppercase tracking-[.22em] text-spring-muted">
+          <p className="mb-5 text-base font-semibold uppercase tracking-[.22em] text-spring-muted">
             خدمات
           </p>
           <SectionTitle

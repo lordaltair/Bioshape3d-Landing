@@ -5,7 +5,7 @@ export default function Contact() {
     <section className="pt-28 pb-12 sm:pt-32 sm:pb-16 md:pt-36 md:pb-20">
       <div className="grid gap-8 px-10 sm:gap-12 lg:grid-cols-[.85fr_1.15fr]">
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[.22em] text-spring-muted">
+          <p className="text-base font-semibold uppercase tracking-[.22em] text-spring-muted">
             تماس
           </p>
           <h1 className="mt-4 text-3xl font-semibold leading-tight sm:mt-5 sm:text-4xl md:text-6xl">
@@ -17,8 +17,8 @@ export default function Contact() {
               <Mail size={20} className="shrink-0" /> info@BIOSHAPE3D.com
             </p>
             <p className="flex items-start gap-3 sm:items-center">
-              <MapPin size={20} className="shrink-0" /> Via del Carpino Nero, ۱۴ - Monteviale,
-              Vicenza
+              <MapPin size={20} className="shrink-0" /> Via del Carpino Nero, ۱۴
+              - Monteviale, Vicenza
             </p>
           </div>
         </div>
@@ -37,7 +37,6 @@ export default function Contact() {
           >
             <option>نوع درخواست</option>
             <option>مشاوره فنی</option>
-            <option>درخواست قیمت</option>
             <option>همکاری</option>
           </select>
           <textarea
